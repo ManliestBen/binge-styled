@@ -1,10 +1,17 @@
 import React from 'react';
+import TVShowCard from '../../components/TVShowCard/TVShowCard'
 
-
-function MovieListPage(props) {
+function TVShowListPage(props) {
     return (
-        <div>This is the TV Show List Page</div>
+        <>
+            {props.tvshows.map(tvshow =>
+                <TVShowCard 
+                    key={tvshow._id}
+                    tvshow={tvshow}
+                />
+            )}
+        </>
     );
 }
 
-export default MovieListPage;
+export default TVShowListPage;

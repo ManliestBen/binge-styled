@@ -21,6 +21,7 @@ function show(req, res) {
 }
 
 function create(req, res) {
+    req.body.cast = req.body.cast.split(',');
     Tvshow.create(req.body)
     .then(tvshow => {res.json(tvshow)})
     .catch(err => {res.json(err)})

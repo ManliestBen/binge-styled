@@ -19,7 +19,7 @@ class AddTVShowPage extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.handleTVShow(this.state.formData);
+        this.props.handleAddTVShow(this.state.formData);
       };
 
     handleChange = e => {

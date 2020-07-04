@@ -1,9 +1,16 @@
 import React from 'react';
-
+import MovieCard from '../../components/MovieCard/MovieCard'
 
 function MovieListPage(props) {
     return (
-        <div>This is the Movie List Page</div>
+        <>
+            {props.movies.map(movie =>
+                <MovieCard 
+                    key={movie._id}
+                    movie={movie}
+                />
+            )}
+        </>
     );
 }
 

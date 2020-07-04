@@ -6,7 +6,7 @@ const NavBar = () => {
     <>
         <nav>
             <div className="nav-wrapper grey">
-                <a className="left brand-log" href="/"><img src="https://fontmeme.com/permalink/200704/d43fd863a6d3e281f9704c12d58a105c.png" height='66' alt="netflix-font" border="0"/></a>
+                <a className="left brand-logo" href="/"><img src="https://fontmeme.com/permalink/200704/d43fd863a6d3e281f9704c12d58a105c.png" height='66' alt="netflix-font" border="0"/></a>
                 <ul id="nav-mobile" className="right">
                     <li><a className='black-text' href="/movies">All Movies</a></li>
                     <li><a className='black-text' href="/movies/add">Add a Movie</a></li>

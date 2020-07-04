@@ -9,6 +9,7 @@ module.exports = {
 }
 
 function create(req, res) {
+    req.body.cast = req.body.cast.split(',');
     Movie.create(req.body)
     .then(movie => {res.json(movie)})
     .catch(err => {res.json(err)})
