@@ -39,20 +39,20 @@ class AddMoviePage extends Component {
                     <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                         <div className="row">
                             <div className="input-field col s6">
-                            <input name="name" id="movie_name" type="text" class="active" value={this.state.formData.name} onChange={this.handleChange} required />
-                            <label for="movie_name">Movie Name</label>
+                            <input name="name" id="movie_name" type="text" className="active" value={this.state.formData.name} onChange={this.handleChange} required />
+                            <label htmlFor="movie_name">Movie Name</label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s6">
-                            <input name="cast" id="cast" type="text" class="active" value={this.state.formData.cast} onChange={this.handleChange} required/>
-                            <label for="cast">Cast (Separate with commas)</label>
+                            <input name="cast" id="cast" type="text" className="active" value={this.state.formData.cast} onChange={this.handleChange} required/>
+                            <label htmlFor="cast">Cast (Separate with commas)</label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s6">
-                            <input name="description" id="description" type="text" class="active" value={this.state.formData.description} onChange={this.handleChange}/>
-                            <label for="description">Description</label>
+                            <input name="description" id="description" type="text" className="active" value={this.state.formData.description} onChange={this.handleChange}/>
+                            <label htmlFor="description">Description</label>
                             </div>
                         </div>
                         <div><label>MPAA Rating</label>
@@ -87,45 +87,34 @@ class AddMoviePage extends Component {
                                 </label>
                             </p>
                         </div>
-
-{/* 
-                        <label>MPAA Rating</label>
-                        <select name="mpaaRating" className="browser-default col s12" value={this.state.formData.mpaaRating} onChange={this.handleChange}>
-                            <option value="" disabled selected>Please select</option>
-                            <option value="G">G</option>
-                            <option value="PG">PG</option>
-                            <option value="PG-13">PG-13</option>
-                            <option value="R">R</option>
-                            <option value="NC-17">NC-17</option>
-                        </select> */}
                         <div className="row">
                             <div className="input-field col s6">
-                            <input name="releaseDate" id="release" type="text" class="active" value={this.state.formData.releaseDate} onChange={this.handleChange}/>
-                            <label for="release">Release Year</label>
+                            <input name="releaseDate" id="release" type="text" className="active" value={this.state.formData.releaseDate} onChange={this.handleChange}/>
+                            <label htmlFor="release">Release Year</label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s6">
-                            <input name="runTime" id="runtime" type="text" class="active" value={this.state.formData.runTime} onChange={this.handleChange}/>
-                            <label for="runtime">Run-time (Min)</label>
+                            <input name="runTime" id="runtime" type="text" className="active" value={this.state.formData.runTime} onChange={this.handleChange}/>
+                            <label htmlFor="runtime">Run-time (Min)</label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s6">
-                            <input name="genre" id="genre" type="text" class="active" value={this.state.formData.genre} onChange={this.handleChange}/>
-                            <label for="genre">Genre</label>
+                            <input name="genre" id="genre" type="text" className="active" value={this.state.formData.genre} onChange={this.handleChange}/>
+                            <label htmlFor="genre">Genre</label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s6">
-                            <input name="imdbRating" id="imdb" type="text" class="active" value={this.state.formData.imdbRating} onChange={this.handleChange}/>
-                            <label for="imdb">IMDB Rating</label>
+                            <input name="imdbRating" id="imdb" type="text" className="active" value={this.state.formData.imdbRating} onChange={this.handleChange}/>
+                            <label htmlFor="imdb">IMDB Rating</label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s6">
-                            <input name="image" id="imageURL" type="text" class="active" value={this.state.formData.image} onChange={this.handleChange}/>
-                            <label for="imageURL">Image URL</label>
+                            <input name="image" id="imageURL" type="text" className="active" value={this.state.formData.image} onChange={this.handleChange}/>
+                            <label htmlFor="imageURL">Image URL</label>
                             </div>
                         </div>
                         <button

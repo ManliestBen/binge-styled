@@ -13,7 +13,7 @@ function TVShowCard(props) {
                 <p>{props.tvshow.description}</p>
                 </div>
                 <div className="card-reveal">
-                <span className="card-title grey-text text-darken-4">{props.tvshow.name}<i class="material-icons right">close</i></span>
+                <span className="card-title grey-text text-darken-4">{props.tvshow.name}<i className="material-icons right">close</i></span>
                 <h6>IMDB Rating: {props.tvshow.imdbRating}</h6>
                 <div>Release Year:  {props.tvshow.releaseDate}</div>
                 <div>Cast: {props.tvshow.cast.join(', ')}</div>

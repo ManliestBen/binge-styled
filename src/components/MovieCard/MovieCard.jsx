@@ -13,7 +13,7 @@ function MovieCard(props) {
                 <p>{props.movie.description}</p>
                 </div>
                 <div className="card-reveal">
-                <span className="card-title grey-text text-darken-4">{props.movie.name}<i class="material-icons right">close</i></span>
+                <span className="card-title grey-text text-darken-4">{props.movie.name}<i className="material-icons right">close</i></span>
                 <h6>IMDB Rating: {props.movie.imdbRating}</h6>
                 <div>Genre:  {props.movie.genre}</div>
                 <div>Release Year:  {props.movie.releaseDate}</div>
