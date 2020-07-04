@@ -27,8 +27,10 @@ const movieSchema = new Schema({
     },
     imdbRating: {
         type: Number
+    },
+    image: {
+        type: String
     }
-
 }, { timestamps: true })
 
 module.exports = mongoose.model('Movie', movieSchema);
