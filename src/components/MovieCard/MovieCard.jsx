@@ -9,9 +9,9 @@ function MovieCard(props) {
                 <div className="card">
                     <div className="card-image">
                     <img src={props.movie.image ? props.movie.image : "https://www.cebodtelecom.com/wp-content/uploads/2014/09/related_post_no_available_image.png"} onClick={()=> {}}/>
-                    <span className="card-title">{props.movie.name}</span>
                     </div>
                     <div className="card-content">
+                    <span className="card-title">{props.movie.name}</span>
                     <p>{props.movie.description}</p>
                     </div>
                 </div>
