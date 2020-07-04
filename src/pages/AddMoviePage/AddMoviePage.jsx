@@ -58,31 +58,31 @@ class AddMoviePage extends Component {
                         <div><label>MPAA Rating</label>
                             <p>
                                 <label>  
-                                    <input name="mpaaRating" value="G" onChange={this.handleChange} type="radio"/>
+                                    <input className="with-gap" name="mpaaRating" value="G" onChange={this.handleChange} type="radio"/>
                                     <span>G</span>
                                 </label>
                             </p>
                             <p>
                                 <label>  
-                                    <input name="mpaaRating" value="PG" onChange={this.handleChange} type="radio"/>
+                                    <input className="with-gap" name="mpaaRating" value="PG" onChange={this.handleChange} type="radio"/>
                                     <span>PG</span>
                                 </label>
                             </p>
                             <p>
                                 <label>  
-                                    <input name="mpaaRating" value="PG-13" onChange={this.handleChange} type="radio"/>
+                                    <input className="with-gap" name="mpaaRating" value="PG-13" onChange={this.handleChange} type="radio"/>
                                     <span>PG-13</span>
                                 </label>
                             </p>
                             <p>
                                 <label>  
-                                    <input name="mpaaRating" value="R" onChange={this.handleChange} type="radio"/>
+                                    <input className="with-gap" name="mpaaRating" value="R" onChange={this.handleChange} type="radio"/>
                                     <span>R</span>
                                 </label>
                             </p>
                             <p>
                                 <label>  
-                                    <input name="mpaaRating" value="NC-17" onChange={this.handleChange} type="radio"/>
+                                    <input className="with-gap" name="mpaaRating" value="NC-17" onChange={this.handleChange} type="radio"/>
                                     <span>NC-17</span>
                                 </label>
                             </p>
@@ -130,7 +130,7 @@ class AddMoviePage extends Component {
                         </div>
                         <button
                             type="submit"
-                            className="btn"
+                            className="btn red"
                             disabled={this.state.invalidForm}
                         >
                             Add Movie

@@ -7,10 +7,10 @@ class AddTVShowPage extends Component {
             name: '',
             cast: [],
             description: '',
-            seasons: 1,
-            releaseDate: 0,
-            episodes: 1,
-            imdbRating: 0,
+            seasons: '',
+            releaseDate: '',
+            episodes: '',
+            imdbRating: '',
             image: ''
         }
     };
@@ -36,48 +36,56 @@ class AddTVShowPage extends Component {
                 <div className="row">
                     <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                         <div className="row">
-                            <div className="input-field col s6">TV Show Name:
-                            <input name="name" id="first_name" type="text" class="active" value={this.state.formData.name} onChange={this.handleChange} required />
+                            <div className="input-field col s6">
+                            <input name="name" id="name" type="text" class="active" value={this.state.formData.name} onChange={this.handleChange} required />
+                            <label for="name">TV Show Name</label>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="input-field col s6">Cast (Separate with commas):
-                            <input name="cast" id="first_name" type="text" class="active" value={this.state.formData.cast} onChange={this.handleChange} required/>
+                            <div className="input-field col s6">
+                            <input name="cast" id="cast" type="text" class="active" value={this.state.formData.cast} onChange={this.handleChange} required/>
+                            <label for="cast">Cast (Separate with commas)</label>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="input-field col s6">Description:
-                            <input name="description" id="first_name" type="text" class="active" value={this.state.formData.description} onChange={this.handleChange}/>
+                            <div className="input-field col s6">
+                            <input name="description" id="description" type="text" class="active" value={this.state.formData.description} onChange={this.handleChange}/>
+                            <label for="description">Description</label>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="input-field col s6">Release Year:
-                            <input name="releaseDate" id="first_name" type="text" class="active" value={this.state.formData.releaseDate} onChange={this.handleChange}/>
+                            <div className="input-field col s6">
+                            <input name="releaseDate" id="release" type="text" class="active" value={this.state.formData.releaseDate} onChange={this.handleChange}/>
+                            <label for="release">Release Year</label>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="input-field col s6">Seasons:
-                            <input name="seasons" id="first_name" type="text" class="active" value={this.state.formData.runTime} onChange={this.handleChange}/>
+                            <div className="input-field col s6">
+                            <input name="seasons" id="seasons" type="text" class="active" value={this.state.formData.runTime} onChange={this.handleChange}/>
+                            <label for="seasons">Seasons</label>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="input-field col s6">Episodes:
-                            <input name="episodes" id="first_name" type="text" class="active" value={this.state.formData.genre} onChange={this.handleChange}/>
+                            <div className="input-field col s6">
+                            <input name="episodes" id="episodes" type="text" class="active" value={this.state.formData.genre} onChange={this.handleChange}/>
+                            <label for="episodes">Episodes</label>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="input-field col s6">IMDB Rating:
-                            <input name="imdbRating" id="first_name" type="text" class="active" value={this.state.formData.imdbRating} onChange={this.handleChange}/>
+                            <div className="input-field col s6">
+                            <input name="imdbRating" id="imdbRating" type="text" class="active" value={this.state.formData.imdbRating} onChange={this.handleChange}/>
+                            <label for="imdbRating">IMDB Rating</label>
                             </div>
                         </div>
                         <div className="row">
-                            <div className="input-field col s6">Image URL:
-                            <input name="image" id="first_name" type="text" class="active" value={this.state.formData.image} onChange={this.handleChange}/>
+                            <div className="input-field col s6">
+                            <input name="image" id="imageURL" type="text" class="active" value={this.state.formData.image} onChange={this.handleChange}/>
+                            <label for="imageURL">Image URL</label>
                             </div>
                         </div>
                         <button
                             type="submit"
-                            className="btn"
+                            className="btn red"
                             disabled={this.state.invalidForm}
                         >
                             Add TV Show
