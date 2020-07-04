@@ -30,6 +30,20 @@ class App extends Component {
     }), () => this.props.history.push('/'));
   }
 
+  handleDeleteMovie = async id => {
+    await movieAPI.deleteOne(id);
+    this.setState(state => ({
+      movies: state.movies.filter(m => m._id !== id)
+    }), () => this.props.history.push('/'));
+  }
+
+  handleDeleteTVShow = async id => {
+    await TVShowAPI.deleteOne(id);
+    this.setState(state => ({
+      tvshows: state.tvshows.filter(t => t._id !== id)
+    }), () => this.props.history.push('/'));
+  }
+
 
   async componentDidMount() {
     const movies = await movieAPI.getAll();
@@ -57,12 +71,14 @@ class App extends Component {
       <Route exact path='/movies' render={() => 
         <MovieListPage 
           movies = {this.state.movies}
+          handleDeleteMovie={this.handleDeleteMovie}
         />
       }>
       </Route>
       <Route exact path='/tvshows' render={() => 
         <TVShowListPage 
           tvshows = {this.state.tvshows}
+          handleDeleteTVShow={this.handleDeleteTVShow}
         />
       }>
       </Route>

@@ -13,3 +13,10 @@ export function create(movie) {
     }, {mode: "cors"})
     .then(res => res.json());
 }
+
+export function deleteOne(id) {
+    return fetch(`${BASE_URL}${id}`, {
+        method: 'DELETE',
+    }, {mode: "cors"})
+    .then(res => res.json());
+}
