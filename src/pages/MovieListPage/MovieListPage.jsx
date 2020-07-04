@@ -1,15 +1,18 @@
 import React from 'react';
-import MovieCard from '../../components/MovieCard/MovieCard'
+import MovieCard from '../../components/MovieCard/MovieCard';
+import './MovieListPage.css';
 
 function MovieListPage(props) {
     return (
         <>
-            {props.movies.map(movie =>
-                <MovieCard 
-                    key={movie._id}
-                    movie={movie}
-                />
-            )}
+            <div className='MovieListPage-grid'>
+                {props.movies.map(movie =>
+                    <MovieCard 
+                        key={movie._id}
+                        movie={movie}
+                    />
+                )}
+            </div>
         </>
     );
 }
