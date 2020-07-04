@@ -20,28 +20,28 @@ class App extends Component {
     const newMovie = await movieAPI.create(newMovieData);
     this.setState(state => ({
       movies: [...state.movies, newMovie]
-    }), () => this.props.history.push('/'));
+    }), () => this.props.history.push('/movies'));
   }
 
   handleAddTVShow = async newTVShowData => {
     const newTVShow = await TVShowAPI.create(newTVShowData);
     this.setState(state => ({
       tvshows: [...state.tvshows, newTVShow]
-    }), () => this.props.history.push('/'));
+    }), () => this.props.history.push('/tvshows'));
   }
 
   handleDeleteMovie = async id => {
     await movieAPI.deleteOne(id);
     this.setState(state => ({
       movies: state.movies.filter(m => m._id !== id)
-    }), () => this.props.history.push('/'));
+    }), () => this.props.history.push('/movies'));
   }
 
   handleDeleteTVShow = async id => {
     await TVShowAPI.deleteOne(id);
     this.setState(state => ({
       tvshows: state.tvshows.filter(t => t._id !== id)
-    }), () => this.props.history.push('/'));
+    }), () => this.props.history.push('/tvshows'));
   }
 
 
