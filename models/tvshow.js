@@ -24,6 +24,9 @@ const tvshowSchema = new Schema({
     },
     imdbRating: {
         type: Number
+    },
+    image: {
+        type: String
     }
 }, { timestamps: true })
 
