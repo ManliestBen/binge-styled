@@ -3,6 +3,7 @@
 }
 body {
   width: 100%;
+  background-image: url(https://www.designbolts.com/wp-content/uploads/2013/02/Subtle-Grunge-Grey-Seamless-Pattern-For-Website-Background.jpg);
 }
 
 .App-logo {
@@ -101,7 +102,9 @@ body {
   border-bottom: 1px solid red !important;
   box-shadow: 0 1px 0 0 red !important
 }
-
+.row .input-field input + label {
+  color: black;
+}
 
 [type="radio"]:checked + span:after,
 [type="radio"].with-gap:checked + span:before,
@@ -114,8 +117,12 @@ body {
   background-color: red;
 }
 
-.formCenter {
-  display: flex;
-  width: 100%;
+
+label {
+  color: black;
 }
 
+
+input {
+  color: black;
+}

@@ -54,31 +54,31 @@ class EditMoviePage extends Component {
                         <div><label>MPAA Rating</label>
                             <p>
                                 <label>  
-                                    <input className="with-gap" name="mpaaRating" value="G" checked={this.state.formData.mpaaRating == "G" ? true : "" } onChange={this.handleChange} type="radio"/>
+                                    <input className="with-gap" name="mpaaRating" value="G" checked={this.state.formData.mpaaRating === "G" ? true : "" } onChange={this.handleChange} type="radio"/>
                                     <span>G</span>
                                 </label>
                             </p>
                             <p>
                                 <label>  
-                                    <input className="with-gap" name="mpaaRating" value="PG" checked={this.state.formData.mpaaRating == "PG" ? true : "" } onChange={this.handleChange} type="radio"/>
+                                    <input className="with-gap" name="mpaaRating" value="PG" checked={this.state.formData.mpaaRating === "PG" ? true : "" } onChange={this.handleChange} type="radio"/>
                                     <span>PG</span>
                                 </label>
                             </p>
                             <p>
                                 <label>  
-                                    <input className="with-gap" name="mpaaRating" value="PG-13" checked={this.state.formData.mpaaRating == "PG-13" ? true : "" } onChange={this.handleChange} type="radio"/>
+                                    <input className="with-gap" name="mpaaRating" value="PG-13" checked={this.state.formData.mpaaRating === "PG-13" ? true : "" } onChange={this.handleChange} type="radio"/>
                                     <span>PG-13</span>
                                 </label>
                             </p>
                             <p>
                                 <label>  
-                                    <input className="with-gap" name="mpaaRating" value="R" checked={this.state.formData.mpaaRating == "R" ? true : "" } onChange={this.handleChange} type="radio"/>
+                                    <input className="with-gap" name="mpaaRating" value="R" checked={this.state.formData.mpaaRating === "R" ? true : "" } onChange={this.handleChange} type="radio"/>
                                     <span>R</span>
                                 </label>
                             </p>
                             <p>
                                 <label>  
-                                    <input className="with-gap" name="mpaaRating" value="NC-17" checked={this.state.formData.mpaaRating == "NC-17" ? true : "" } onChange={this.handleChange} type="radio"/>
+                                    <input className="with-gap" name="mpaaRating" value="NC-17" checked={this.state.formData.mpaaRating === "NC-17" ? true : "" } onChange={this.handleChange} type="radio"/>
                                     <span>NC-17</span>
                                 </label>
                             </p>

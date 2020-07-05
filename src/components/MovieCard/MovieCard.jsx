@@ -6,7 +6,7 @@ function MovieCard({ movie, handleDeleteMovie}) {
         <>
             <div className=" card">
                 <div className="card-image waves-effect waves-block waves-light">
-                    <img className="activator" src={movie.image ? movie.image : "https://www.cebodtelecom.com/wp-content/uploads/2014/09/related_post_no_available_image.png"} onClick={()=> {}}/>
+                    <img alt="movie" className="activator" src={movie.image ? movie.image : "https://www.cebodtelecom.com/wp-content/uploads/2014/09/related_post_no_available_image.png"} onClick={()=> {}}/>
                 </div>
                 <div className="card-content">
                     <span className="card-title activator grey-text text-darken-4">{movie.name}<i className="material-icons right">more_vert</i></span>

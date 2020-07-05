@@ -80,9 +80,12 @@ class App extends Component {
     return (
       <>
       <Route exact path='/' render={() =>
+      <>
         <NavBar 
           pageName={"Welcome to Binge!"}
         />
+        <img src="https://images.pexels.com/photos/1040158/pexels-photo-1040158.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="landing" />
+      </>
       }>
 
       </Route>
