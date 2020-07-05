@@ -9,9 +9,9 @@ const NavBar = ({ pageName }) => {
                     <h5 className="left page-name brand-logo">{pageName}</h5>
                 <ul id="nav-mobile" className="right">
                     <li><a href="/movies"><i className="material-icons left small">movie</i>All Movies</a></li>
-                    <li><a href="/movies/add">Add a Movie</a></li>
+                    <li><a href="/movies/add"><i className="material-icons left small">add</i>Add a Movie</a></li>
                     <li><a href="/tvshows"><i className="material-icons left small">tv</i>All TV Shows</a></li>
-                    <li><a href="/tvshows/add">Add a TV Show</a></li>
+                    <li><a href="/tvshows/add"><i className="material-icons left small">add</i>Add a TV Show</a></li>
                 </ul>
             </div>
         </nav>
