@@ -21,6 +21,7 @@ function TVShowCard({ tvshow, handleDeleteTVShow }) {
                     <div>Episodes:  {tvshow.episodes}</div>
                     <p>{tvshow.description}</p>
                     <button type="submit" className="btn red" onClick={() => handleDeleteTVShow(tvshow._id)}>
+                    <i class="material-icons left">delete</i>    
                         Delete TV Show
                     </button>
                     <Link 
@@ -29,7 +30,7 @@ function TVShowCard({ tvshow, handleDeleteTVShow }) {
                             pathname: '/editTV',
                             state: {tvshow}
                         }}
-                    >
+                    ><i class="material-icons left">build</i>
                         Edit TV Show
                     </Link>
                 </div>

@@ -117,7 +117,7 @@ class EditMoviePage extends Component {
                             type="submit"
                             className="btn green"
                             disabled={this.state.invalidForm}
-                        >
+                        ><i class="material-icons left">edit</i>
                             Update Movie
                         </button>
                         <Link 
@@ -125,7 +125,7 @@ class EditMoviePage extends Component {
                             to={{
                                 pathname: '/movies'
                             }}
-                        >
+                        ><i class="material-icons left">undo</i>
                         Cancel
                         </Link>                            
                     </form>

@@ -91,7 +91,7 @@ class AddTVShowPage extends Component {
                             type="submit"
                             className="btn red"
                             disabled={this.state.invalidForm}
-                        >
+                        ><i class="material-icons left">add</i>
                             Add TV Show
                         </button>                           
                     </form>
