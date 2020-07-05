@@ -12,7 +12,7 @@ const NavBar = ({ pageName }) => {
                     <li><a className="nav-link-b" href="/movies/add">Add a Movie</a></li><i className="material-icons left small">add</i>
                     <li><a className="nav-link" href="/tvshows">All TV Shows</a></li><i className="material-icons left small">tv</i>
                     <li><a className="nav-link-b" href="/tvshows/add">Add a TV Show</a></li><i className="material-icons left small">add</i>
-                    <li><a className="nav-link-b" href="/search">Search</a></li><i className="material-icons left small">search</i>
+                    {/* <li><a className="nav-link-b" href="/search">Search</a></li><i className="material-icons left small">search</i> */}
                 </ul>
             </div>
         </nav>
