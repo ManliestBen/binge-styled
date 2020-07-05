@@ -8,6 +8,9 @@ import MovieListPage from '../MovieListPage/MovieListPage';
 import TVShowListPage from '../TVShowListPage/TVShowListPage';
 import * as movieAPI from '../../services/movies-api';
 import * as TVShowAPI from '../../services/tvshows-api';
+import EditMoviePage from '../../pages/EditMoviePage/EditMoviePage';
+import EditTVShowPage from '../../pages/EditTVShowPage/EditTVShowPage';
+
 
 
 class App extends Component {
@@ -44,6 +47,16 @@ class App extends Component {
     }), () => this.props.history.push('/tvshows'));
   }
 
+  handleUpdateMovie = async updatedMovieData => {
+    const updatedMovie = await movieAPI.update(updatedMovieData);
+    const newMoviesArray = this.state.movies.map(m => 
+      m._id === updatedMovie._id ? updatedMovie : m
+    );
+    this.setState(
+      {movies: newMoviesArray},
+      () => this.props.history.push('/movies')
+    );
+  }
 
   async componentDidMount() {
     const movies = await movieAPI.getAll();
@@ -82,6 +95,12 @@ class App extends Component {
         />
       }>
       </Route>
+      <Route exact path='/edit' render={({history, location}) => 
+            <EditMoviePage
+              handleUpdateMovie={this.handleUpdateMovie}
+              location={location}
+            />
+          } />
       </>
     );
   }
