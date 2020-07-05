@@ -134,8 +134,20 @@ input {
   margin-left: 100px;
 }
 
-@media (max-width: 1000px) {
-    .page-name {
-      visibility: hidden;
-    }
+@media (max-width: 1250px) {
+  .page-name {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-link {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav-link-b {
+    display: none;
+  }
 }

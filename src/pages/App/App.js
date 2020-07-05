@@ -10,7 +10,7 @@ import * as movieAPI from '../../services/movies-api';
 import * as TVShowAPI from '../../services/tvshows-api';
 import EditMoviePage from '../../pages/EditMoviePage/EditMoviePage';
 import EditTVShowPage from '../../pages/EditTVShowPage/EditTVShowPage';
-
+import SearchPage from '../../pages/SearchPage/SearchPage';
 
 
 class App extends Component {
@@ -115,15 +115,20 @@ class App extends Component {
         />
       }>
       </Route>
-      <Route exact path='/edit' render={({history, location}) => 
+      <Route exact path='/edit' render={({location}) => 
             <EditMoviePage
               handleUpdateMovie={this.handleUpdateMovie}
               location={location}
             />
       } />
-      <Route exact path='/editTV' render={({history, location}) => 
+      <Route exact path='/editTV' render={({location}) => 
             <EditTVShowPage
               handleUpdateTVShow={this.handleUpdateTVShow}
+              location={location}
+            />
+      } />
+      <Route exact path='/search' render={({history, location}) => 
+            <SearchPage
               location={location}
             />
       } />
