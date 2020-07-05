@@ -79,7 +79,13 @@ class App extends Component {
   render () {
     return (
       <>
-      <NavBar />
+      <Route exact path='/' render={() =>
+        <NavBar 
+          pageName={"Welcome to Binge!"}
+        />
+      }>
+
+      </Route>
       <Route exact path='/movies/add' render={() => 
         <AddMoviePage 
           handleAddMovie = {this.handleAddMovie}

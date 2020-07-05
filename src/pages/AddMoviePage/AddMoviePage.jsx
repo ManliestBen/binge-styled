@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import NavBar from '../../components/NavBar/NavBar';
 class AddMoviePage extends Component {
     state = {
         invalidForm: true,
@@ -13,7 +13,7 @@ class AddMoviePage extends Component {
             genre: '',
             imdbRating: '',
             image: ''
-        }
+        },
     };
 
     formRef = React.createRef();
@@ -35,6 +35,9 @@ class AddMoviePage extends Component {
     render() {
         return (
             <>
+                <NavBar 
+                    pageName={"Add Movie"}
+                />
                 <div className="row">
                     <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                         <div className="row">

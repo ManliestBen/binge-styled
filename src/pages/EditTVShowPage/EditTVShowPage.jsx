@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from '../../components/NavBar/NavBar';
 
 class EditTVShowPage extends Component {
     state = {
@@ -25,6 +26,9 @@ class EditTVShowPage extends Component {
     render() {
         return (
             <>
+                <NavBar 
+                    pageName={"Edit " + this.state.formData.name}
+                />
                 <div className="row">
                     <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                         <div className="row">
