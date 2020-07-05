@@ -4,6 +4,7 @@ import './LandingPage.css'
 function LandingPage () {
     return(
         <>
+            <div className="background"></div>
         </>
     )
 }
