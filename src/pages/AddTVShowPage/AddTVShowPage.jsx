@@ -61,13 +61,13 @@ class AddTVShowPage extends Component {
                         </div>
                         <div className="row">
                             <div className="input-field col s6">
-                            <input name="seasons" id="seasons" type="text" className="active" value={this.state.formData.runTime} onChange={this.handleChange}/>
+                            <input name="seasons" id="seasons" type="text" className="active" value={this.state.formData.seasons} onChange={this.handleChange}/>
                             <label htmlFor="seasons">Seasons</label>
                             </div>
                         </div>
                         <div className="row">
                             <div className="input-field col s6">
-                            <input name="episodes" id="episodes" type="text" className="active" value={this.state.formData.genre} onChange={this.handleChange}/>
+                            <input name="episodes" id="episodes" type="text" className="active" value={this.state.formData.episodes} onChange={this.handleChange}/>
                             <label htmlFor="episodes">Episodes</label>
                             </div>
                         </div>

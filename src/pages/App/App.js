@@ -58,6 +58,17 @@ class App extends Component {
     );
   }
 
+  handleUpdateTVShow = async updatedTVShowData => {
+    const updatedTVShow = await TVShowAPI.update(updatedTVShowData);
+    const newTVShowsArray = this.state.tvshows.map(t => 
+      t._id === updatedTVShow._id ? updatedTVShow : t
+    );
+    this.setState(
+      {tvshows: newTVShowsArray},
+      () => this.props.history.push('/tvshows')
+    );
+  }
+
   async componentDidMount() {
     const movies = await movieAPI.getAll();
     this.setState({movies})
@@ -100,7 +111,13 @@ class App extends Component {
               handleUpdateMovie={this.handleUpdateMovie}
               location={location}
             />
-          } />
+      } />
+      <Route exact path='/editTV' render={({history, location}) => 
+            <EditTVShowPage
+              handleUpdateTVShow={this.handleUpdateTVShow}
+              location={location}
+            />
+      } />
       </>
     );
   }

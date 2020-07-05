@@ -20,3 +20,12 @@ export function deleteOne(id) {
     }, {mode: "cors"})
     .then(res => res.json());
 }
+
+export function update(tvshow) {
+    return fetch(`${BASE_URL}${tvshow._id}`, {
+        method: "PUT",
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify(tvshow)
+    }, {mode: "cors"})
+    .then(res => res.json());
+}

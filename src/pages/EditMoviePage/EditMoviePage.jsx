@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class EditMoviePage extends Component {
     state = {
@@ -109,11 +110,19 @@ class EditMoviePage extends Component {
                         </div>
                         <button
                             type="submit"
-                            className="btn red"
+                            className="btn green"
                             disabled={this.state.invalidForm}
                         >
                             Update Movie
-                        </button>                           
+                        </button>
+                        <Link 
+                            className="btn red"
+                            to={{
+                                pathname: '/movies'
+                            }}
+                        >
+                        Cancel
+                        </Link>                            
                     </form>
                 </div>
             </>
