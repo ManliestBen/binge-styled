@@ -43,7 +43,7 @@ body {
   width: 100%;
 }
 .nav-wrapper {
-  background-color: rgb(202, 202, 202);
+  background-color: rgba(255, 0, 0, 0.692);
 }
 .card {
   width: 480px;
@@ -118,3 +118,4 @@ body {
   display: flex;
   width: 100%;
 }
+
