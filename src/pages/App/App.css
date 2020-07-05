@@ -129,3 +129,13 @@ label {
 input {
   color: black;
 }
+
+.page-name {
+  margin-left: 100px;
+}
+
+@media (max-width: 1000px) {
+    .page-name {
+      visibility: hidden;
+    }
+}

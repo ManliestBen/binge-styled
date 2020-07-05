@@ -21,7 +21,7 @@ function MovieCard({ movie, handleDeleteMovie}) {
                     <div>MPAA Rating:  {movie.mpaaRating}</div>
                     <p>{movie.description}</p>
                     <button type="submit" className="btn red" onClick={() => handleDeleteMovie(movie._id)}>
-                    <i class="material-icons left">delete</i>    
+                    <i className="material-icons left">delete</i>    
                         Delete Movie
                     </button>
                     <Link 
@@ -30,7 +30,7 @@ function MovieCard({ movie, handleDeleteMovie}) {
                             pathname: '/edit',
                             state: {movie}
                         }}
-                    ><i class="material-icons left">build</i>
+                    ><i className="material-icons left">build</i>
                         Edit Movie
                     </Link> 
                 </div>
