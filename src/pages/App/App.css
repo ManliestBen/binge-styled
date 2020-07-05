@@ -104,6 +104,7 @@ body {
 }
 .row .input-field input + label {
   color: black;
+  font-weight: bold;
 }
 
 [type="radio"]:checked + span:after,
@@ -119,6 +120,8 @@ body {
 
 
 label {
+  font-weight: bold;
+
   color: black;
 }
 
