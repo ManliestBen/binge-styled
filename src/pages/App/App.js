@@ -12,14 +12,25 @@ import EditMoviePage from '../../pages/EditMoviePage/EditMoviePage';
 import EditTVShowPage from '../../pages/EditTVShowPage/EditTVShowPage';
 import SearchPage from '../../pages/SearchPage/SearchPage';
 import LandingPage from '../../pages/LandingPage/LandingPage';
-
+import LoginPage from '../LoginPage/LoginPage';
+import SignupPage from '../SignupPage/SignupPage';
+import userService from '../../services/userService';
 
 class App extends Component {
   state = {
     movies: [],
-    tvshows: []
+    tvshows: [],
+    user: userService.getUser()
   }
 
+  handleLogout = () => {
+    userService.logout();
+    this.setState({ user: null });
+  }
+
+  handleSignupOrLogin = () => {
+    this.setState({user: userService.getUser()});
+  }
   handleAddMovie = async newMovieData => {
     const newMovie = await movieAPI.create(newMovieData);
     this.setState(state => ({
@@ -80,31 +91,36 @@ class App extends Component {
   render () {
     return (
       <>
-      <Route exact path='/' render={() =>
-      <>
-        <NavBar 
-          pageName={"Welcome to Binge!"}
+
+      <NavBar 
+          user={this.state.user}
+          handleLogout={this.handleLogout}
         />
+        
+
+      <Route exact path='/' render={() =>
         <LandingPage />
-      </>
       }>
 
       </Route>
       <Route exact path='/movies/add' render={() => 
         <AddMoviePage 
           handleAddMovie = {this.handleAddMovie}
+          user={this.state.user}
         />
       }>
       </Route>
       <Route exact path='/tvshows/add' render={() => 
         <AddTVShowPage 
           handleAddTVShow = {this.handleAddTVShow}
+          user={this.state.user}
         />
       }>
       </Route>
       <Route exact path='/movies' render={() => 
         <MovieListPage 
           movies = {this.state.movies}
+          user={this.state.user}
           handleDeleteMovie={this.handleDeleteMovie}
         />
       }>
@@ -112,27 +128,43 @@ class App extends Component {
       <Route exact path='/tvshows' render={() => 
         <TVShowListPage 
           tvshows = {this.state.tvshows}
+          user={this.state.user}
           handleDeleteTVShow={this.handleDeleteTVShow}
         />
       }>
       </Route>
       <Route exact path='/edit' render={({location}) => 
-            <EditMoviePage
-              handleUpdateMovie={this.handleUpdateMovie}
-              location={location}
-            />
+        <EditMoviePage
+          handleUpdateMovie={this.handleUpdateMovie}
+          location={location}
+          user={this.state.user}
+        />
       } />
       <Route exact path='/editTV' render={({location}) => 
-            <EditTVShowPage
-              handleUpdateTVShow={this.handleUpdateTVShow}
-              location={location}
-            />
+        <EditTVShowPage
+          handleUpdateTVShow={this.handleUpdateTVShow}
+          location={location}
+          user={this.state.user}
+        />
       } />
-      <Route exact path='/search' render={({history, location}) => 
-            <SearchPage
-              location={location}
-            />
+      <Route exact path='/search' render={({location}) => 
+        <SearchPage
+          location={location}
+          user={this.state.user}
+        />
       } />
+      <Route exact path='/signup' render={({ history }) => 
+        <SignupPage
+          history={history}
+          handleSignupOrLogin={this.handleSignupOrLogin}
+        />
+      }/>
+      <Route exact path='/login' render={({ history }) => 
+        <LoginPage
+          history={history}
+          handleSignupOrLogin={this.handleSignupOrLogin}
+        />
+      }/>
       </>
     );
   }

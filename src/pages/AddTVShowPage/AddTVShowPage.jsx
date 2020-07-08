@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NavBar from '../../components/NavBar/NavBar';
 
 class AddTVShowPage extends Component {
     state = {
@@ -34,9 +33,6 @@ class AddTVShowPage extends Component {
     render() {
         return (
             <>
-                <NavBar 
-                    pageName={"Add TV Show"}
-                />
                 <div className="row">
                     <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                         <div className="row">
