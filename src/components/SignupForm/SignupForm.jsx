@@ -38,32 +38,36 @@ class SignupForm extends Component {
   render() {
     return (
       <div>
-        <header className="header-footer">Sign Up</header>
-        <form className="form-horizontal" onSubmit={this.handleSubmit} >
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="text" className="form-control" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} />
+        <h3>Sign Up</h3>
+        <form className="col s12" autocomplete="off" onSubmit={this.handleSubmit} >
+          <div className="row">
+            <div className="input-field col s12">
+              <input type="text" autocomplete="off" className="active" id="name" value={this.state.name} name="name" onChange={this.handleChange} />
+              <label htmlFor="name">Name</label>
             </div>
           </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
+          <div className="row">
+            <div className="input-field col s12">
+              <input type="text" autocomplete="off" className="active" id="email" value={this.state.email} name="email" onChange={this.handleChange} />
+              <label htmlFor="email">Email</label>
             </div>
           </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="password" className="form-control" placeholder="Password" value={this.state.password} name="password" onChange={this.handleChange} />
+          <div className="row">
+            <div className="input-field col s12">
+              <input type="text" autocomplete="off" className="active" id="password" value={this.state.password} name="password" onChange={this.handleChange} />
+              <label htmlFor="password">Password</label>
             </div>
           </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="password" className="form-control" placeholder="Confirm Password" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} />
+          <div className="row">
+            <div className="input-field col s12">
+              <input type="text" autocomplete="off" className="active" id="confirm" value={this.state.passwordConf} name="passwordConf" onChange={this.handleChange} />
+              <label htmlFor="confirm">Confirm Password</label>
             </div>
           </div>
           <div className="form-group">
             <div className="col-sm-12 text-center">
-              <button className="btn btn-default" disabled={this.isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
-              <Link to='/'>Cancel</Link>
+              <button className="btn green" disabled={this.isFormInvalid()}>Sign Up<i class="material-icons right">person_add</i></button>&nbsp;&nbsp;
+              <Link className="btn red" to='/'>Cancel<i class="material-icons right">cancel</i></Link>
             </div>
           </div>
         </form>
