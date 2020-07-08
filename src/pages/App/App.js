@@ -86,7 +86,6 @@ class App extends Component {
           pageName={"Welcome to Binge!"}
         />
         <LandingPage />
-        {/* <img src="https://images.pexels.com/photos/1040158/pexels-photo-1040158.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="landing" /> */}
       </>
       }>
 
