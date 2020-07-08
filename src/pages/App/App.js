@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import './App.css';
 import NavBar from '../../components/NavBar/NavBar';
 import AddMoviePage from '../AddMoviePage/AddMoviePage';
@@ -46,17 +46,25 @@ class App extends Component {
   }
 
   handleDeleteMovie = async id => {
-    await movieAPI.deleteOne(id);
-    this.setState(state => ({
-      movies: state.movies.filter(m => m._id !== id)
-    }), () => this.props.history.push('/movies'));
+    if(userService.getUser()){
+      await movieAPI.deleteOne(id);
+      this.setState(state => ({
+        movies: state.movies.filter(m => m._id !== id)
+      }), () => this.props.history.push('/movies'));
+    } else {
+      this.props.history.push('/login')
+    }
   }
 
   handleDeleteTVShow = async id => {
-    await TVShowAPI.deleteOne(id);
-    this.setState(state => ({
-      tvshows: state.tvshows.filter(t => t._id !== id)
-    }), () => this.props.history.push('/tvshows'));
+    if(userService.getUser()){
+      await TVShowAPI.deleteOne(id);
+      this.setState(state => ({
+        tvshows: state.tvshows.filter(t => t._id !== id)
+      }), () => this.props.history.push('/tvshows'));
+    } else {
+      this.props.history.push('/login')
+    }
   }
 
   handleUpdateMovie = async updatedMovieData => {
@@ -96,25 +104,29 @@ class App extends Component {
           user={this.state.user}
           handleLogout={this.handleLogout}
         />
-        
-
       <Route exact path='/' render={() =>
         <LandingPage />
       }>
 
       </Route>
       <Route exact path='/movies/add' render={() => 
-        <AddMoviePage 
-          handleAddMovie = {this.handleAddMovie}
-          user={this.state.user}
-        />
+        userService.getUser() ?
+          <AddMoviePage 
+            handleAddMovie = {this.handleAddMovie}
+            user={this.state.user}
+          />
+        :
+          <Redirect to='/login' />
       }>
       </Route>
       <Route exact path='/tvshows/add' render={() => 
-        <AddTVShowPage 
-          handleAddTVShow = {this.handleAddTVShow}
-          user={this.state.user}
-        />
+        userService.getUser() ?
+          <AddTVShowPage 
+            handleAddTVShow = {this.handleAddTVShow}
+            user={this.state.user}
+          />
+        :
+          <Redirect to='/login' />
       }>
       </Route>
       <Route exact path='/movies' render={() => 
@@ -134,18 +146,24 @@ class App extends Component {
       }>
       </Route>
       <Route exact path='/edit' render={({location}) => 
-        <EditMoviePage
-          handleUpdateMovie={this.handleUpdateMovie}
-          location={location}
-          user={this.state.user}
-        />
+        userService.getUser() ?
+          <EditMoviePage
+            handleUpdateMovie={this.handleUpdateMovie}
+            location={location}
+            user={this.state.user}
+          />
+        :
+          <Redirect to='/login'/>
       } />
       <Route exact path='/editTV' render={({location}) => 
-        <EditTVShowPage
-          handleUpdateTVShow={this.handleUpdateTVShow}
-          location={location}
-          user={this.state.user}
-        />
+        userService.getUser() ?
+          <EditTVShowPage
+            handleUpdateTVShow={this.handleUpdateTVShow}
+            location={location}
+            user={this.state.user}
+          />
+        :
+          <Redirect to='/login' />
       } />
       <Route exact path='/search' render={({location}) => 
         <SearchPage

@@ -2,10 +2,16 @@ const router = require('express').Router();
 const tvshowsCtrl = require('../controllers/tvshows');
 
 router.get('/', tvshowsCtrl.index);
+
 router.use(require('../config/auth'));
-router.get('/:id', tvshowsCtrl.show);
-router.post('/', tvshowsCtrl.create);
-router.put('/:id', tvshowsCtrl.update);
-router.delete('/:id', tvshowsCtrl.delete);
+router.get('/:id', checkAuth, tvshowsCtrl.show);
+router.post('/', checkAuth, tvshowsCtrl.create);
+router.put('/:id', checkAuth, tvshowsCtrl.update);
+router.delete('/:id', checkAuth, tvshowsCtrl.delete);
+
+function checkAuth(req, res, next) {
+    if (req.user) return next();
+    return res.status(401).json({msg: 'Not Authorized'});
+}
 
 module.exports = router;

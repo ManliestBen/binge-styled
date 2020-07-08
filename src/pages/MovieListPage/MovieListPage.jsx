@@ -4,7 +4,7 @@ import './MovieListPage.css';
 
 function MovieListPage(props) {
     return (
-        <>
+        <> 
             <div className='MovieListPage-grid'>
                 {props.movies.map(movie =>
                     <MovieCard 
