@@ -79,7 +79,7 @@ class EditTVShowPage extends Component {
                             type="submit"
                             className="btn green"
                             disabled={this.state.invalidForm}
-                        ><i class="material-icons left">edit</i>
+                        ><i className="material-icons left">edit</i>
                             Update TV Show
                         </button>
                         <Link 
@@ -87,7 +87,7 @@ class EditTVShowPage extends Component {
                             to={{
                                 pathname: '/tvshows'
                             }}
-                        ><i class="material-icons left">undo</i>
+                        ><i className="material-icons left">undo</i>
                         Cancel
                         </Link>                            
                     </form>
