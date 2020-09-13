@@ -93,9 +93,8 @@ class App extends Component {
 
   async componentDidMount() {
     const movies = await movieAPI.getAll();
-    this.setState({movies})
     const tvshows = await TVShowAPI.getAll();
-    this.setState({tvshows}) 
+    this.setState({movies, tvshows})
   }
 
   render () {
