@@ -10,6 +10,7 @@ require('./config/database');
 const movieRouter = require('./routes/movies');
 const tvshowRouter = require('./routes/tvshows');
 const userRouter = require('./routes/users');
+const authRouter = require('./routes/auth')
 const cors = require('cors')
 
 
@@ -20,6 +21,7 @@ app.use(express.json());
 app.use('/api/movies', movieRouter);
 app.use('/api/tvshows', tvshowRouter);
 app.use('/api/users', userRouter);
+app.use('/api/auth', authRouter);
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 app.get('/*', function(req, res) {

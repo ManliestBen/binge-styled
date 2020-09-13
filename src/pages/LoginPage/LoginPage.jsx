@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './LoginPage.css';
-import userService from '../../services/userService';
+import authService from '../../services/authService';
 
 class LoginPage extends Component {
   
@@ -20,7 +20,7 @@ class LoginPage extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await userService.login(this.state);
+      await authService.login(this.state);
       // Let <App> know a user has signed up!
       this.props.handleSignupOrLogin();
       this.props.history.push('/');

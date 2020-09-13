@@ -14,23 +14,25 @@ import SearchPage from '../../pages/SearchPage/SearchPage';
 import LandingPage from '../../pages/LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
-import userService from '../../services/userService';
+import authService from '../../services/authService';
+import UsersPage from '../UsersPage/UsersPage'
 
 class App extends Component {
   state = {
     movies: [],
     tvshows: [],
-    user: userService.getUser()
+    user: authService.getUser()
   }
 
   handleLogout = () => {
-    userService.logout();
+    authService.logout();
     this.setState({ user: null });
   }
 
   handleSignupOrLogin = () => {
-    this.setState({user: userService.getUser()});
+    this.setState({user: authService.getUser()});
   }
+  
   handleAddMovie = async newMovieData => {
     const newMovie = await movieAPI.create(newMovieData);
     this.setState(state => ({
@@ -46,7 +48,7 @@ class App extends Component {
   }
 
   handleDeleteMovie = async id => {
-    if(userService.getUser()){
+    if(authService.getUser()){
       await movieAPI.deleteOne(id);
       this.setState(state => ({
         movies: state.movies.filter(m => m._id !== id)
@@ -57,7 +59,7 @@ class App extends Component {
   }
 
   handleDeleteTVShow = async id => {
-    if(userService.getUser()){
+    if(authService.getUser()){
       await TVShowAPI.deleteOne(id);
       this.setState(state => ({
         tvshows: state.tvshows.filter(t => t._id !== id)
@@ -110,7 +112,7 @@ class App extends Component {
 
       </Route>
       <Route exact path='/movies/add' render={() => 
-        userService.getUser() ?
+        authService.getUser() ?
           <AddMoviePage 
             handleAddMovie = {this.handleAddMovie}
             user={this.state.user}
@@ -120,7 +122,7 @@ class App extends Component {
       }>
       </Route>
       <Route exact path='/tvshows/add' render={() => 
-        userService.getUser() ?
+        authService.getUser() ?
           <AddTVShowPage 
             handleAddTVShow = {this.handleAddTVShow}
             user={this.state.user}
@@ -146,7 +148,7 @@ class App extends Component {
       }>
       </Route>
       <Route exact path='/edit' render={({location}) => 
-        userService.getUser() ?
+        authService.getUser() ?
           <EditMoviePage
             handleUpdateMovie={this.handleUpdateMovie}
             location={location}
@@ -156,7 +158,7 @@ class App extends Component {
           <Redirect to='/login'/>
       } />
       <Route exact path='/editTV' render={({location}) => 
-        userService.getUser() ?
+        authService.getUser() ?
           <EditTVShowPage
             handleUpdateTVShow={this.handleUpdateTVShow}
             location={location}
@@ -183,6 +185,13 @@ class App extends Component {
           handleSignupOrLogin={this.handleSignupOrLogin}
         />
       }/>
+      <Route exact path='/users' render={({ history }) => 
+        <UsersPage
+          history={history}
+          handleSignupOrLogin={this.handleSignupOrLogin}
+          user={this.state.user}
+        />
+    }/>
       </>
     );
   }

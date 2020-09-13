@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const usersCtrl = require('../controllers/users');
+const authCtrl = require('../controllers/auth');
 
 /*---------- Public Routes ----------*/
-
+router.post('/signup', authCtrl.signup);
+router.post('/login', authCtrl.login);
 
 /*---------- Protected Routes ----------*/
 router.use(require('../config/auth'));
-router.get('/', checkAuth, usersCtrl.index)
 
 /*---------- Auth Checker ----------*/
 function checkAuth(req, res, next) {

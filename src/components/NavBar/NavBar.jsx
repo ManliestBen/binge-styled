@@ -7,6 +7,7 @@ const NavBar = ({ user, handleLogout }) => {
             <div className="nav-wrapper">
                 <a className=" left" href="/"><img src="https://fontmeme.com/permalink/200705/e2371cf438042048aa22fb9341eadbba.png" height='66' alt="netflix-font" border="0"/></a>
                 <ul id="nav-mobile" className="right">
+                    <li><a className="nav-link-a" href="/users">Users</a></li>
                     <li><a className="nav-link-a" href="/movies">All Movies</a></li>
                     <li><a href="/movies"><i className="material-icons left small">movie</i></a></li>
                     <li><a className="nav-link-b" href="/movies/add">Add a Movie</a></li>
@@ -28,6 +29,7 @@ const NavBar = ({ user, handleLogout }) => {
             <div className="nav-wrapper">
                 <a className=" left" href="/"><img src="https://fontmeme.com/permalink/200705/e2371cf438042048aa22fb9341eadbba.png" height='66' alt="netflix-font" border="0"/></a>
                 <ul id="nav-mobile" className="right">
+                    <li><a className="nav-link-a" href="/users">Users</a></li>
                     <li><a className="nav-link" href="/movies">All Movies</a></li>
                     <li><a href="/movies"><i className="material-icons left small">movie</i></a></li>
                     <li><a className="nav-link" href="/tvshows">All TV Shows</a></li>
