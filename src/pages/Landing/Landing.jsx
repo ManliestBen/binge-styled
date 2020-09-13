@@ -1,7 +1,7 @@
 import React from 'react';
-import './LandingPage.css'
+import './Landing.css'
 
-function LandingPage () {
+function Landing () {
     return(
         <>
             <div className="background"></div>
@@ -10,4 +10,4 @@ function LandingPage () {
 }
 
 
-export default LandingPage;
+export default Landing;

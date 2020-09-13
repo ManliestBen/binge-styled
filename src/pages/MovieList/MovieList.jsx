@@ -1,11 +1,11 @@
 import React from 'react';
 import MovieCard from '../../components/MovieCard/MovieCard';
-import './MovieListPage.css';
+import './MovieList.css';
 
-function MovieListPage(props) {
+function MovieList(props) {
     return (
         <> 
-            <div className='MovieListPage-grid'>
+            <div className='MovieList-grid'>
                 {props.movies.map(movie =>
                     <MovieCard 
                         key={movie._id}
@@ -18,4 +18,4 @@ function MovieListPage(props) {
     );
 }
 
-export default MovieListPage;
+export default MovieList;

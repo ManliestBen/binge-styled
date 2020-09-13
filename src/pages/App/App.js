@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom'
 import './App.css';
 import NavBar from '../../components/NavBar/NavBar';
-import AddMoviePage from '../AddMoviePage/AddMoviePage';
-import AddTVShowPage from '../AddTVShowPage/AddTVShowPage';
-import MovieListPage from '../MovieListPage/MovieListPage';
-import TVShowListPage from '../TVShowListPage/TVShowListPage';
+import AddMovie from '../AddMovie/AddMovie';
+import AddTVShow from '../AddTVShow/AddTVShow';
+import MovieList from '../MovieList/MovieList';
+import TVShowList from '../TVShowList/TVShowList';
 import * as movieAPI from '../../services/movies-api';
 import * as TVShowAPI from '../../services/tvshows-api';
-import EditMoviePage from '../../pages/EditMoviePage/EditMoviePage';
-import EditTVShowPage from '../../pages/EditTVShowPage/EditTVShowPage';
-import SearchPage from '../../pages/SearchPage/SearchPage';
-import LandingPage from '../../pages/LandingPage/LandingPage';
-import LoginPage from '../LoginPage/LoginPage';
-import SignupPage from '../SignupPage/SignupPage';
+import EditMovie from '../EditMovie/EditMovie';
+import EditTVShow from '../EditTVShow/EditTVShow';
+import Search from '../Search/Search';
+import Landing from '../Landing/Landing';
+import Login from '../Login/Login';
+import Signup from '../Signup/Signup';
 import authService from '../../services/authService';
-import UsersPage from '../UsersPage/UsersPage'
+import Users from '../Users/Users'
 
 class App extends Component {
   state = {
@@ -107,13 +107,13 @@ class App extends Component {
           handleLogout={this.handleLogout}
         />
       <Route exact path='/' render={() =>
-        <LandingPage />
+        <Landing />
       }>
 
       </Route>
       <Route exact path='/movies/add' render={() => 
         authService.getUser() ?
-          <AddMoviePage 
+          <AddMovie 
             handleAddMovie = {this.handleAddMovie}
             user={this.state.user}
           />
@@ -123,7 +123,7 @@ class App extends Component {
       </Route>
       <Route exact path='/tvshows/add' render={() => 
         authService.getUser() ?
-          <AddTVShowPage 
+          <AddTVShow 
             handleAddTVShow = {this.handleAddTVShow}
             user={this.state.user}
           />
@@ -132,7 +132,7 @@ class App extends Component {
       }>
       </Route>
       <Route exact path='/movies' render={() => 
-        <MovieListPage 
+        <MovieList 
           movies = {this.state.movies}
           user={this.state.user}
           handleDeleteMovie={this.handleDeleteMovie}
@@ -140,7 +140,7 @@ class App extends Component {
       }>
       </Route>
       <Route exact path='/tvshows' render={() => 
-        <TVShowListPage 
+        <TVShowList 
           tvshows = {this.state.tvshows}
           user={this.state.user}
           handleDeleteTVShow={this.handleDeleteTVShow}
@@ -149,7 +149,7 @@ class App extends Component {
       </Route>
       <Route exact path='/edit' render={({location}) => 
         authService.getUser() ?
-          <EditMoviePage
+          <EditMovie
             handleUpdateMovie={this.handleUpdateMovie}
             location={location}
             user={this.state.user}
@@ -159,7 +159,7 @@ class App extends Component {
       } />
       <Route exact path='/editTV' render={({location}) => 
         authService.getUser() ?
-          <EditTVShowPage
+          <EditTVShow
             handleUpdateTVShow={this.handleUpdateTVShow}
             location={location}
             user={this.state.user}
@@ -168,25 +168,25 @@ class App extends Component {
           <Redirect to='/login' />
       } />
       <Route exact path='/search' render={({location}) => 
-        <SearchPage
+        <Search
           location={location}
           user={this.state.user}
         />
       } />
       <Route exact path='/signup' render={({ history }) => 
-        <SignupPage
+        <Signup
           history={history}
           handleSignupOrLogin={this.handleSignupOrLogin}
         />
       }/>
       <Route exact path='/login' render={({ history }) => 
-        <LoginPage
+        <Login
           history={history}
           handleSignupOrLogin={this.handleSignupOrLogin}
         />
       }/>
       <Route exact path='/users' render={({ history }) => 
-        <UsersPage
+        <Users
           history={history}
           handleSignupOrLogin={this.handleSignupOrLogin}
           user={this.state.user}

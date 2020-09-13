@@ -1,11 +1,11 @@
 import React from 'react';
 import TVShowCard from '../../components/TVShowCard/TVShowCard'
-import './TVShowListPage.css';
+import './TVShowList.css';
 
-function TVShowListPage(props) {
+function TVShowList(props) {
     return (
         <>
-            <div className='TVShowListPage-grid'>
+            <div className='TVShowList-grid'>
                 {props.tvshows.map(tvshow =>
                     <TVShowCard 
                         key={tvshow._id}
@@ -18,4 +18,4 @@ function TVShowListPage(props) {
     );
 }
 
-export default TVShowListPage;
+export default TVShowList;

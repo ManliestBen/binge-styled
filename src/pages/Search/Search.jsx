@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class SearchPage extends Component {
+class Search extends Component {
     state = {
 
     }
@@ -8,7 +8,7 @@ class SearchPage extends Component {
     render() {
         return(
             <>
-                <div>Search Page</div>
+                <div>Search </div>
             </>
         )
     }
@@ -16,4 +16,4 @@ class SearchPage extends Component {
 
 
 
-export default SearchPage;
+export default Search;

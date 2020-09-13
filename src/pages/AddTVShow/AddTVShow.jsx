@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './AddTVShowPage.css'
+import './AddTVShow.css'
 
-class AddTVShowPage extends Component {
+class AddTVShow extends Component {
     state = {
         invalidForm: true,
         formData: {
@@ -34,7 +34,7 @@ class AddTVShowPage extends Component {
     render() {
         return (
             <>
-                <div className="AddTVShowPage">
+                <div className="AddTVShow">
                     <form className="col s12" ref={this.formRef} onSubmit={this.handleSubmit}>
                         <div className="row">
                             <div className="input-field col s12">
@@ -98,4 +98,4 @@ class AddTVShowPage extends Component {
     }
 }
 
-export default AddTVShowPage;
+export default AddTVShow;

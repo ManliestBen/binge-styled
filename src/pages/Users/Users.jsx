@@ -1,9 +1,7 @@
-import { get } from 'mongoose';
 import React, { Component } from 'react'
 import { getAllUsers } from '../../services/userService'
-import { Redirect } from 'react-router-dom'
 
-class UsersPage extends Component {
+class Users extends Component {
   state = {
     users: []
   }
@@ -31,4 +29,4 @@ class UsersPage extends Component {
  }
 
  
-export default UsersPage;
+export default Users;
